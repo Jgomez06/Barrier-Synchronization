@@ -1,0 +1,19 @@
+Author:   Jonathan Castellanos-Gomez
+
+Purpose:
+This program uses threads and semaphores to simulate a barrier synchronization problem.  
+
+Compilation:
+To compile the main program, move to the directory containing the files 'barrierSynch.c'. Execute the terminal command:
+
+   	   gcc -o synch barrierSynch.c -pthread
+
+Execution:
+To execute the program, move to the directory containing the executables 'synch.exe'and execute the terminal command:
+
+   	   ./synch
+
+
+Description:
+
+The program begins by creating five threads. Three of these threads are 'slow' meaning that they will sleep for three seconds in each phase, while the other two threads will not sleep at all. Each thread will go through 10 phases each, but a thread can not continue to next phase until all threads have completed the current phase. After completing a phase a thread will call the barrierSynch() method to determine whether it can move on the next phase or if must wait for any threads. This method uses semaphores to force threads to wait for each other and to signal them when all threads have completed the current phase.
